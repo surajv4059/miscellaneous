@@ -3,5 +3,57 @@ myself: suraj verma
 fruit: "grapes"
 job: 'sde'
 
-bio: hey my name is suraj.
-i am studying somthing
+# the | will help us to store multiple lines in one go. beacuse YAML does not
+# support multiline by default.
+
+bio: |
+ hey my name is suraj.
+ i am studying somthing.
+
+# Now if we want to save some data as a single line but we are writing it in
+# multiple lines then we must use >
+
+message : >
+ this will all
+ be in a
+ single line
+
+#the above is same as
+message : this will all be in a single line
+
+#other data types
+
+number : 6543 #integer data type
+marks : 98.89 #float data type
+booleanValue : No # n , N, false , False , FALSE all works
+
+#same for true : yes, y ,Y etc
+
+
+#specify data types
+zero : !!int 0
+positiveNum : !!int 45
+negativeNum : !!int -45
+binaryNumber : !!int 0b11001
+octalNumber : !!int 06547
+hexaDecimal : !!int 0x45
+commaValue : !!int +540_000 #it will be saved as 540,000
+  
+
+#floating point numbers
+marks : !!float 56.89
+infinite : !!float .inf
+not a num: .nan 
+
+#boolean
+booleanValue : !!bool yes
+
+#null handling
+surname : !!null Null #or null or NULL or ~
+~ : this is a null
+
+#date and time
+date: !!timestamp 2002-12-14
+indianTime : 2001-12-15T02:59:43.10 +5:30
+no time zone : 2001-12-15T02:59:43.10 #by default UTC
+

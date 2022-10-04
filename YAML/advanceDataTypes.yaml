@@ -1,0 +1,66 @@
+#list
+student: !!seq #sequence type data
+ - marks
+ - name
+ - roll_num
+
+ #it can be written like this also
+
+ student : [marks,name,roll_num]
+
+ #if some of the keys of the seq is empty , it is called sparse sequence
+
+ sparse seq: 
+  - hey
+  - hello
+  -
+  - nothing
+  - empty
+  - null 
+
+#nested sequence
+-
+ - mango
+ - banana
+ - apple
+-
+ - marks
+ - roll_num
+ - name
+
+#key: value pairs are called maps
+
+!!map
+
+#nested mapings : map within a map
+name: suraj verma
+role:
+   age: 23
+   job: sde
+
+#pairs: keys may have duplicate values
+
+pair example : !!pairs
+  - job: student
+  - job: teacher
+#this will be an array of hashtables
+#can also be written as
+pair example: !!pairs [job:student , job teacher]
+
+#!!set will allow you to have unique values
+names: !!set
+ ? suraj
+ ? satya
+ ? krishnendra
+
+# dictionary !!omap
+
+People : !!omap
+ - Suraj:
+    name : suraj verma
+    age : 23
+    height : 179
+ - Someone:
+    name : some one
+    age : 23
+    height : 179

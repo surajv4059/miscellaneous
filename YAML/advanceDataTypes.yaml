@@ -64,3 +64,5 @@ People : !!omap
     name : some one
     age : 23
     height : 179
+
+#reusing some properties using anchors
